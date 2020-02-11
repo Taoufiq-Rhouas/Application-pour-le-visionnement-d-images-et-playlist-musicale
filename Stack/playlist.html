@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body >
+	<div id="menu">
+		<div id="div_logo">
+			<a href="index.html"><img src="2949883-48.png" style="margin-left: 10px;margin-top: 4px;"></a>
+		</div>
+		<div id="div_menu">
+			<ul>
+				<li id="l1">
+					<a href="index.html">Accueil</a>
+				</li>
+				<li id="l2">
+					<a href="galerie.html" >Galerie</a>
+				</li>
+				<li id="l3">
+					<a href="playlist.html" class="active">Playlist</a>
+				</li>
+			</ul>
+		</div>
+		<div id="div_rst">
+			<p></p>
+		</div>
+	</div>
+	<section>
+		<div>
+			<center>
+				<h1 id="titre">Stack: Playlist</h1>
+				<div id="container">
+					<!-- Input -->
+					<div id="container-1">
+						<input type="text" name="" class="node-at-head" id="push-input" placeholder="Data"><br>
+						<input type="text" id="push-input-singer" placeholder="singer">
+						<input type="text" id="push-input-title" placeholder="title"><br>
+					</div>
+					<div id="container-2">
+						<button onclick="Push()" class="btn-l">Push</button>
+        				<button onclick="Pop()" id="pop-button" class="btn-r">Pop</button>
+        			</div>
+        			<div>
+        				<br><span id="imagsinger"></span><br>
+        				<!-- <br><span id="singer"></span><br>
+        				<span id="title"></span><br> -->
+        			</div>
+					<div id="container-3" style="">
+						<button id="top-button" onclick="Peak()" >&#8679;</button>
+						<!-- <h3><b>Result: </b><span id="result"></span></h3> -->
+						<div id="img_description">
+							<div id="rs" style="">
+								<h3><b>Result: </b><span id="result"></span></h3>
+							</div>
+							<div id="ds" style="">
+								<div style="">
+									<span style="">Name:</span><span id="singer" style=""></span><br>
+        							<span style="">Description:</span><span id="title" style=""></span><br>
+								</div>
+							</div>
+						</div>
+						<!-- <h3><b>Result: </b><img src="" id="result"></h3> -->
+						<!-- <audio controls>
+						  <source src="kotokoto-TRASH-.mp3" type="audio/mpeg">
+						</audio> -->
+        				<button id="bottom-button" onclick="Low()"  >&#8681;</button>
+					</div>
+				</div>
+			</center>
+		</div>
+	</section>
+	<script src="script_playlist.js" ></script>
+</body>
+</html>
+
