@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playlist</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+		#div_menu{
+			width: 100%;
+			background-color: red;
+			margin: 0px;
+		}
+		#container_section_1{
+			display: flex;
+			background-color: yellow;
+		}
+		#container_section_1 img{
+			width: 100%;
+		}
+		#section_1_content_1{
+			width: 20%;
+		}
+		#section_1_content_2{
+			width: 70%;
+		}
+		#section_1_content_3{
+			width: 10%;
+		}
+		#section_1_content_2_div_btn{
+			display: flex;
+		}
+		#section_2 table{
+			width: 100%
+		}
+		#lecture_mp3{
+			bottom: 0px;
+		}
+		#div_popup{
+			position: absolute;
+			background-color: red;
+			margin-top: 10%;
+			margin-left: 30%;
+			align-items: center;
+			padding: 0.5% 2% 2% 2%;
+			display: none;
+			opacity: 100% !important;
+			z-index: 1;
+		}
+		#container_div_popup{
+		}
+		.input_popup{
+			border-radius: 5px;
+			border:none;
+			margin: 5px 1px;
+		}
+		#popup_btn_close{
+			/*top: 0px;*/
+			/*float: right;*/
+			margin-left: 100%;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function popup(){
+			document.getElementById('div_popup').style.display="block";
+			document.getElementById('section_1').style.opacity="50%";
+			// document.getElementById('popup_btn_close').style.display="block";
+			
+			document.getElementById('section_2').style.opacity="10%";
+			// document.getElementById('div_popup').style.opacity="100%";
+			
+			
+		}
+		function close_popup(){
+			document.getElementById('div_popup').style.display="none";
+			document.getElementById('section_1').style.opacity="100%";
+			document.getElementById('section_2').style.opacity="100%";
+		}
+	</script>
+</head>
+<body style="">
+	<!-- background-color: red;opacity: 50%; -->
+	
+	<div id="div_menu">
+		<center>
+			<p style="margin: 0px;">menu</p>
+		</center>
+	</div>
+	<div id="div_popup" style="">
+		<!-- <button id="popup_btn_close">x</button>	 -->	
+		<!-- <p>popup</p> --> 
+		<div id="container_div_popup">
+			<button id="popup_btn_close" onclick="close_popup()">x</button>	
+			<center>
+				<!-- <div style=""> -->
+					<!-- <input type="file" name="" class="input_popup" id="push-input" placeholder="1."><br> -->
+					<input type="text" name="" class="input_popup" id="push-input" placeholder="1."><br>
+					<input type="file" name="" class="input_popup" id="push-img" placeholder="1"><br>
+					<input type="text" name="" class="input_popup" id="push-input-singer" placeholder="2."><br>
+				<!-- </div> -->
+				<!-- <div style=""> -->
+					<input type="text" name="" class="input_popup" id="push-input-title" placeholder="3."><br>
+					<input type="text" name="" class="input_popup" id="push-input-desc" placeholder="4">
+				<!-- </div> -->
+			</center>
+			<center><button onclick="Push()" >Push</button></center>
+		</div>
+	</div>
+	<section id="section_1">
+		<div id="container_section_1">
+			<div id="section_1_content_1">
+				<img src="person-s-gray-hoodie-1482476.jpg">
+			</div>
+			<div id="section_1_content_2">
+				<h3>singer<span id="singer" style=""></h3>
+				<h1>title</span><span id="title" style=""></h1>
+				<h3>description<span id="description" style=""></h3>
+				<div id="section_1_content_2_div_btn">
+					<button onclick="" >remove ferst</button>
+					<button onclick="Pop()" id="pop-button" >remove last</button>
+				</div>
+			</div>
+			<div id="section_1_content_3">
+				<button class="btn-l" onclick="popup()">+</button>
+			</div>
+		</div>
+	</section>
+	<section id="section_2">
+		<table border="1px" id="teble_playlist">
+			<tr>
+				<th>TITLE</th>
+				<th>ARTIST</th>
+				<th>description</th>
+				<th>img</th>
+			</tr>
+			<tr>
+				<td>TITLE1</td>
+				<td>ARTIST1</td>
+				<td>description1</td>
+				<td>img1</td>
+			</tr>
+			<tr>
+				<td>TITLE2</td>
+				<td>ARTIST2</td>
+				<td>description2</td>
+				<td>img2</td>
+			</tr>
+			<tr>
+				<td>TITLE3</td>
+				<td>ARTIST3</td>
+				<td>description3</td>
+				<td>img3</td>
+			</tr>
+			<tr>
+				<td>TITLE4</td>
+				<td>ARTIST4</td>
+				<td>description4</td>
+				<td>img4</td>
+			</tr>
+		</table>
+	</section>
+	<div id="lecture_mp3">
+		<center>
+			<div style="display: flex;width: 50%">
+				<button id="top-button" onclick="Peak()" ><</button>
+				<h3><b>Result: </b><span id="result"></span></h3>
+				<button id="bottom-button" onclick="Low()"  >></button>
+			</div>
+		</center>
+	</div>
+	<script src="script_playlist.js" ></script>
+</body>
+</html>
