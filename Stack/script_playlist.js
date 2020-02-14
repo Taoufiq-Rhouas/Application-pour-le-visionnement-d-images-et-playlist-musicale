@@ -1,26 +1,109 @@
 class Stack{
     constructor(){
-        this.stack = [];
-        this.singer = [];
-        this.title = [];
+        // this.stack = [];
+        // this.singer = [];
+        // this.title = [];
+
+        // **********************
+        this.artiste = [];
+        this.album = [];
+        this.genremsc = [];
+        this.lienmsc = []; // this.stack = [];
+
         this.top = null;
         this.size = 0;
     }
 
     // Push Method
     Push(){
+
+        // Get singer From Input
+        var pushinputsinger = document.getElementById("push-input-singer");
+
+
+        // Get title From Input
+        var pushinputtitle = document.getElementById("push-input-title");
+
+
+
+
+
+        // ****************************
+
+        var genre;
+        var r1 = document.getElementById('radio1').checked;
+        var r2 = document.getElementById('radio2').checked;
+        var r3 = document.getElementById('radio3').checked;
+        var r4 = document.getElementById('radio4').checked;
+        if (r1 ==true) {
+            genre= "Rap";
+            // alert(genre);
+        }
+        else if (r2 ==true) {
+            genre= "Pop";
+            // alert(genre);
+        }
+        else if (r3 ==true) {
+            genre= "Classique";
+            // alert(genre);
+        }
+        else if (r4 ==true) {
+            genre= "Chaabi";
+            // alert(genre);
+        }
+        else{
+            genre= "nulle";
+            // alert(genre);
+        }
+
+
+
+
+        // ****************************
+
+
+
         // Get Data From Input
         var pushInput = document.getElementById("push-input");
 
         //-------------------------------------//
 
-        // Get singer From Input
-        var pushinputsinger = document.getElementById("push-input-singer");
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Get title From Input
-        var pushinputtitle = document.getElementById("push-input-title");
+        // var pushinputtitle = document.getElementById("push-input-title");
 
         //-------------------------------------//
+
+
+
+        // Get singer
+        var artiste = document.getElementById("singer");
+
+
+
+
+        // Get title
+        var album = document.getElementById("title");
+
+
+
+        var genremsc = document.getElementById("genre");
 
 
 
@@ -33,11 +116,8 @@ class Stack{
 
         //-------------------------------------//
 
-        // Get singer
-        var singer = document.getElementById("singer");
-
-        // Get title
-        var title = document.getElementById("title");
+        
+        
 
         //-------------------------------------//
 
@@ -56,24 +136,43 @@ class Stack{
             this.top++;
             this.size++;
 
-            this.stack[this.top] = pushInput.value;
 
-            this.singer[this.top] = pushinputsinger.value;
 
-            this.title[this.top] = pushinputtitle.value;
+
+
+        //*************************
+        
+        this.artiste[this.top] = pushinputsinger.value;
+        this.album[this.top] = pushinputtitle.value;
+        this.genremsc[this.top] = genre;
+        this.lienmsc[this.top] = pushInput.value;
+
+
+
+            // this.stack[this.top] = pushInput.value;
+
+            // this.singer[this.top] = pushinputsinger.value;
+
+            // this.title[this.top] = pushinputtitle.value;
 
             // Set result
             // result.innerHTML = this.stack[this.top];
             // result.innerHTML = '<img src="'+this.stack[this.top]+'" >';
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.top]+'" type="audio/mpeg"></audio>';
+
+
+
+            artiste.innerHTML = this.artiste[this.top];
+            album.innerHTML = this.album[this.top];
+            genremsc.innerHTML = this.genremsc[this.top];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.top]+'" type="audio/mpeg"></audio>';
 
 
             //------------------------//
 
-            singer.innerHTML = this.singer[this.top];
+            // singer.innerHTML = this.singer[this.top];
 
 
-            title.innerHTML = this.title[this.top];
+            // title.innerHTML = this.title[this.top];
 
 
             //-----------------------//
@@ -96,33 +195,164 @@ class Stack{
 
     // Pop Method
     Pop(){
-        // Get Data From Input
-        var pushInput = document.getElementById("push-input");
 
 
 
-        //-------------------------------------//
 
-        // Get singer From Input
-        var pushinputsinger = document.getElementById("push-input-singer");
+        // // Get singer From Input
+        // var pushinputsinger = document.getElementById("push-input-singer");
+
+
+        // // Get title From Input
+        // var pushinputtitle = document.getElementById("push-input-title");
+
+
+
+
+
+        // // ****************************
+
+        // var genre;
+        // var r1 = document.getElementById('radio1').checked;
+        // var r2 = document.getElementById('radio2').checked;
+        // var r3 = document.getElementById('radio3').checked;
+        // var r4 = document.getElementById('radio4').checked;
+        // if (r1 ==true) {
+        //     genre= "Rap";
+        //     // alert(genre);
+        // }
+        // else if (r2 ==true) {
+        //     genre= "Pop";
+        //     // alert(genre);
+        // }
+        // else if (r3 ==true) {
+        //     genre= "Classique";
+        //     // alert(genre);
+        // }
+        // else if (r4 ==true) {
+        //     genre= "Chaabi";
+        //     // alert(genre);
+        // }
+        // else{
+        //     genre= "nulle";
+        //     // alert(genre);
+        // }
+
+
+
+
+        // // ****************************
+
+
+
+        // // Get Data From Input
+        // var pushInput = document.getElementById("push-input");
+
+        // //-------------------------------------//
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Get title From Input
-        var pushinputtitle = document.getElementById("push-input-title");
+        // var pushinputtitle = document.getElementById("push-input-title");
 
         //-------------------------------------//
+
+
+
+        // Get singer
+        var artiste = document.getElementById("singer");
+
+
+
+
+        // Get title
+        var album = document.getElementById("title");
+
+
+
+        var genremsc = document.getElementById("genre");
+
 
 
         // Get Result
         var result = document.getElementById("result");
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // //***********************************************************
+        // // Get Data From Input
+        // var pushInput = document.getElementById("push-input");
+
+
+
+        // //-------------------------------------//
+
+        // // Get singer From Input
+        // var pushinputsinger = document.getElementById("push-input-singer");
+
+        // // Get title From Input
+        // var pushinputtitle = document.getElementById("push-input-title");
+
+        // //-------------------------------------//
+
+
+
+
+        // //***********************************************************
+        // Get Result
+        // var result = document.getElementById("result");
+
+
         //-------------------------------------//
 
         // Get singer
-        var singer = document.getElementById("singer");
+        // var singer = document.getElementById("singer");
 
         // Get title
-        var title = document.getElementById("title");
+        // var title = document.getElementById("title");
 
         //-------------------------------------//
 
@@ -132,24 +362,49 @@ class Stack{
 
         if (this.size == 1){
             popButton.disabled = true;
-            result.innerHTML = "Stack is empty";
+            artiste.innerHTML = "ma";
+            album.innerHTML = "b9a";
+            genremsc.innerHTML = "walo";
+            result.innerHTML = "Playlist is empty";
         }else{
             // delete this.stack[this.size];
-            this.stack.splice(this.top);
-            this.singer.splice(this.top);
-            this.title.splice(this.top);
+
+
+
+            this.artiste.splice(this.top);
+            this.album.splice(this.top);
+            this.genremsc.splice(this.top);
+            this.lienmsc.splice(this.top);
             this.top--;
             this.size--;
+
+
+            artiste.innerHTML = this.artiste[this.top];
+            album.innerHTML = this.album[this.top];
+            genremsc.innerHTML = this.genremsc[this.top];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.top]+'" type="audio/mpeg"></audio>';
+
+
+
+
+
+
+
+            // this.stack.splice(this.top);
+            // this.singer.splice(this.top);
+            // this.title.splice(this.top);
+            // this.top--;
+            // this.size--;
             // result.innerHTML = this.stack[this.top];
             // result.innerHTML = '<img src="'+this.stack[this.top]+'" >';
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.top]+'" type="audio/mpeg"></audio>';
+            // result.innerHTML = '<audio controls><source src="'+this.stack[this.top]+'" type="audio/mpeg"></audio>';
 
-            //------------------------//
+            // //------------------------//
 
-            singer.innerHTML = this.singer[this.top];
+            // singer.innerHTML = this.singer[this.top];
 
 
-            title.innerHTML = this.title[this.top];
+            // title.innerHTML = this.title[this.top];
 
             //-----------------------//
 
@@ -161,8 +416,8 @@ class Stack{
         console.log("Top (Pop) : " + this.top);
         console.log("Size (Pop) : " + this.size);
 
-        for (var i = 0; i < this.stack.length; i++){
-            console.log("Stack: " + this.stack[i]);
+        for (var i = 0; i < this.lienmsc.length; i++){
+            console.log("Stack: " + this.lienmsc[i]);
         }
 
         // If stack contains one element disable bottom button
@@ -173,16 +428,40 @@ class Stack{
 
     // Top Method
     getPeak(){
+
+        // Get singer
+        var artiste = document.getElementById("singer");
+
+
+
+
+        // Get title
+        var album = document.getElementById("title");
+
+
+
+        var genremsc = document.getElementById("genre");
+
+
+
         // Get Result
         var result = document.getElementById("result");
 
 
+        //****************************
 
-        //-----------------------------//
 
-        var singer = document.getElementById("singer");
 
-        var title = document.getElementById("title");
+        // // Get Result
+        // var result = document.getElementById("result");
+
+
+
+        // //-----------------------------//
+
+        // var singer = document.getElementById("singer");
+
+        // var title = document.getElementById("title");
 
         //-----------------------------//
 
@@ -191,23 +470,35 @@ class Stack{
 
         console.log("Top (getPeak) : " + this.top);
         console.log("Size (getPeak) : " + this.size);
-        console.log("Length (getPeak) : " + Number(this.stack.length - 1));
+        console.log("Length (getPeak) : " + Number(this.lienmsc.length - 1));
 
         // check if we are not arrive to top one 
-        if (this.size == Number(this.stack.length-1)){
+        if (this.size == Number(this.lienmsc.length-1)){
             topButton.disabled = true;
             // this.top++;
             this.size++;
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
-
-            //----------------------//
-
-            singer.innerHTML = this.singer[this.size];
 
 
-            title.innerHTML = this.title[this.size];
+            artiste.innerHTML = this.artiste[this.size];
+            album.innerHTML = this.album[this.size];
+            genremsc.innerHTML = this.genremsc[this.size];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.size]+'" type="audio/mpeg"></audio>';
+
+
+
+
+
+
+            // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
+
+            // //----------------------//
+
+            // singer.innerHTML = this.singer[this.size];
+
+
+            // title.innerHTML = this.title[this.size];
 
             //-------------------------//
 
@@ -216,34 +507,64 @@ class Stack{
             this.size++;
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
-
-            //-------------------------------//
-
-            singer.innerHTML = this.singer[this.size];
 
 
-            title.innerHTML = this.title[this.size];
+            artiste.innerHTML = this.artiste[this.size];
+            album.innerHTML = this.album[this.size];
+            genremsc.innerHTML = this.genremsc[this.size];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.size]+'" type="audio/mpeg"></audio>';
+
+
+
+            // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
+
+            // //-------------------------------//
+
+            // singer.innerHTML = this.singer[this.size];
+
+
+            // title.innerHTML = this.title[this.size];
 
             //---------------------------------//
             bottomButton.disabled = false;     
         }
 
-        if(this.size == Number(this.stack.length-1)){
+        if(this.size == Number(this.lienmsc.length-1)){
             topButton.disabled = true;
         }
     }
 
     // Low Mothod
     getLow(){
+
+
+        // Get singer
+        var artiste = document.getElementById("singer");
+
+
+
+
+        // Get title
+        var album = document.getElementById("title");
+
+
+
+        var genremsc = document.getElementById("genre");
+
+
+
         // Get Result
         var result = document.getElementById("result");
 
-        //-----------------------------//
+        //***********************************
+        // // Get Result
+        // var result = document.getElementById("result");
 
-        var singer = document.getElementById("singer");
+        // //-----------------------------//
 
-        var title = document.getElementById("title");
+        // var singer = document.getElementById("singer");
+
+        // var title = document.getElementById("title");
 
         //-----------------------------//
 
@@ -259,28 +580,46 @@ class Stack{
             
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
-
-            //------------------------------------//
-
-            singer.innerHTML = this.singer[this.size];
 
 
-            title.innerHTML = this.title[this.size];
+
+            artiste.innerHTML = this.artiste[this.size];
+            album.innerHTML = this.album[this.size];
+            genremsc.innerHTML = this.genremsc[this.size];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.size]+'" type="audio/mpeg"></audio>';
+
+
+            // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
+
+            // //------------------------------------//
+
+            // singer.innerHTML = this.singer[this.size];
+
+
+            // title.innerHTML = this.title[this.size];
 
             //--------------------------------------//
         }else{            
             this.size--;
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';   
-            result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
-
-            //---------------------------------------//
-
-            singer.innerHTML = this.singer[this.size];
 
 
-            title.innerHTML = this.title[this.size];
+            artiste.innerHTML = this.artiste[this.size];
+            album.innerHTML = this.album[this.size];
+            genremsc.innerHTML = this.genremsc[this.size];
+            result.innerHTML = '<audio controls><source src="'+this.lienmsc[this.size]+'" type="audio/mpeg"></audio>';
+
+
+
+            // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
+
+            // //---------------------------------------//
+
+            // singer.innerHTML = this.singer[this.size];
+
+
+            // title.innerHTML = this.title[this.size];
 
             //---------------------------------------//
 

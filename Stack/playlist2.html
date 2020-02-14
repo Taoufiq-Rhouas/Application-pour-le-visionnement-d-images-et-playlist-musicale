@@ -6,15 +6,58 @@
 		body{
 			margin: 0px;
 			padding: 0px;
+			/*background: linear-gradient(#e66465, #9198e5);*/
+			/*background-repeat: no-repeat;*/
+			  background: -webkit-gradient(linear, left top, left bottom, from(#3F3F3F), to(#1A171A)) fixed;
+			  font-family: cursive;
+
 		}
-		#div_menu{
+		/*#div_menu{
 			width: 100%;
+			height: 40px;
 			background-color: red;
+			
+			top: 0px;
+
+		}
+		#ul_menu{
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
 			margin: 0px;
+			height: 100%
+		}
+		#ul_menu li a{
+			text-decoration: none;
+			padding: 22px 30px;
+			background-color: yellow;
+			
+			margin: 10px 20px;
+		}*/
+
+
+		.clsa{
+			text-decoration: none;
+			/*background-color: yellow;*/
+			/*padding: 10px;*/
+			margin: 0px 15px 0px 15px;
+
+		}
+		.clsli{
+			background-color: #636e72;
+			padding: 10px;
+			/*margin: 0px 5px 0px 5px;*/
+		}
+
+
+
+		#section_1{
+			margin-left: 20px;
 		}
 		#container_section_1{
 			display: flex;
-			background-color: yellow;
+			/*background-color: yellow;*/
+			background-color: transparent;
 		}
 		#container_section_1 img{
 			width: 100%;
@@ -24,22 +67,38 @@
 		}
 		#section_1_content_2{
 			width: 70%;
+			/*background-color: red;*/
+			background-color: transparent;
 		}
 		#section_1_content_3{
 			width: 10%;
 		}
 		#section_1_content_2_div_btn{
 			display: flex;
+			border-bottom: 0px;
+			/*background-color: #636e72;*/
+			background-color: transparent;
+			position: absolute;
+			bottom: 0px;
 		}
 		#section_2 table{
 			width: 100%
 		}
 		#lecture_mp3{
 			bottom: 0px;
+			justify-content: center;
+			position: absolute;
+			bottom: 0px;
+			background-color: #636e72;
+			width: 100%;
 		}
+
+
+
+		 /*********************************************************** */
 		#div_popup{
 			position: absolute;
-			background-color: red;
+			background-color: #636e72;
 			margin-top: 10%;
 			margin-left: 30%;
 			align-items: center;
@@ -47,25 +106,127 @@
 			display: none;
 			opacity: 100% !important;
 			z-index: 1;
+			box-shadow: 0 0 6em #55efc4;
+			border-radius: 10px;
+			width: 30%;
+		}
+		#popup_btn{
+			background-color: transparent;
+			border:none;
+			outline: none;
+			cursor: pointer;
 		}
 		#container_div_popup{
+			width: 100%;
 		}
 		.input_popup{
 			border-radius: 5px;
+			width: 90%;
 			border:none;
-			margin: 5px 1px;
+			font-size: 15px;
+			margin: 5px 0px;
+			/*margin: 5px 1px;*/
+			/*float: right;*/
+		}
+		.span_popup{
+			/*float: left;*/
+			color: white;
+			font-size: 15px;
 		}
 		#popup_btn_close{
 			/*top: 0px;*/
 			/*float: right;*/
-			margin-left: 100%;
+			margin-left: 95%;
+			background-color: transparent;
+			border:none;
+			outline: none;
+			cursor: pointer;
 		}
 
+		/*********************************************************** */
+
+
+
+
+
+		#section_1_content_1 img{
+			margin: 5px;
+			border-radius: 10px;
+			box-shadow: 0 0 0.5em #55efc4;
+		}
+		#section_1_content_2_div{
+			/*background-color: yellow;*/
+			background-color: transparent;
+			width: 90%;
+			height: 80%;
+			margin-left: 20px;
+			font-family: sans-serif;
+			line-height: 10px;
+			position: relative;
+		}
+		#section_1_content_2_div h3{
+			color: #95a5a6;
+		}
+		#section_1_content_2_div h1{
+			color: white;
+			font-size: 40px;
+		}
+		#section_1_content_2 h3 h1 div{
+			padding-left: 30px;
+		}
+		#rmv_f{
+			background-color: #2ecc71;
+			color: white;
+			border:none;
+			padding: 12px 20px;
+			border-radius: 50px;
+			margin-right: 20px;
+		}
+		#pop-button{
+			background-color: #2ecc71;
+			color: white;
+			border:none;
+			padding: 12px 20px;
+			border-radius: 50px;
+		}
+		#teble_playlist{
+			margin-top: 30px;
+			color: white;
+			justify-content: center;
+		}
+		#teble_playlist tr th{
+			  border-bottom: 4px solid #636e72;
+			  height: 40px;
+			  text-align: center;
+			  color: #636e72;
+		}
+		#teble_playlist tr td{
+			  border-bottom: 1px solid #b2bec3;
+			  height: 40px;
+			  text-align: center;
+		}
+		.btn-navigation{
+			background-color: transparent;
+			border:none;
+			outline: none;
+		}
+		.btn_push{
+			padding: 8px 30px;
+			background-color: transparent;
+			border-radius: 50px;
+			border-color: white;
+			color: white;
+			outline: none;
+			margin-top: 20px;
+		}
+		.input_data{
+			margin-right: 40px;
+		}
 	</style>
 	<script type="text/javascript">
 		function popup(){
 			document.getElementById('div_popup').style.display="block";
-			document.getElementById('section_1').style.opacity="50%";
+			document.getElementById('section_1').style.opacity="20%";
 			// document.getElementById('popup_btn_close').style.display="block";
 			
 			document.getElementById('section_2').style.opacity="10%";
@@ -78,98 +239,226 @@
 			document.getElementById('section_1').style.opacity="100%";
 			document.getElementById('section_2').style.opacity="100%";
 		}
+		function tt(){
+			// var genre;
+			// var a = document.getElementByName('genre_msc').isChecked;
+			// document.getElementById('aff').innerHTML= a.value;
+			// var r1 = document.getElementById('radio1').checked;
+			// var r1 = document.getElementByName('genre_msc');
+			var genre;
+			var r1 = document.getElementById('radio1').checked;
+			var r2 = document.getElementById('radio2').checked;
+			var r3 = document.getElementById('radio3').checked;
+			var r4 = document.getElementById('radio4').checked;
+			if (r1 ==true) {
+				genre= "Rap";
+				alert(genre);
+			}
+			else if (r2 ==true) {
+				genre= "Pop";
+				alert(genre);
+			}
+			else if (r3 ==true) {
+				genre= "Classique";
+				alert(genre);
+			}
+			else if (r4 ==true) {
+				genre= "Chaabi";
+				alert(genre);
+			}
+			else{
+				genre= "nulle";
+				alert(genre);
+			}
+			// alert(r1.value);
+		}
 	</script>
 </head>
 <body style="">
 	<!-- background-color: red;opacity: 50%; -->
 	
-	<div id="div_menu">
-		<center>
-			<p style="margin: 0px;">menu</p>
-		</center>
+	<!-- <div style="background-color: yellow;padding-top: 10px;"> -->
+		<!-- <div id="div_menu"> -->
+			<!-- <center> -->
+				<!-- <p style="margin: 0px;float: left;">menu</p> -->
+				<!-- <ul id="ul_menu">
+					<li><a href="#">Galerie</a></li>
+					<li><a href="#">Playlist</a></li>
+
+				</ul> -->
+			<!-- (</center> -->
+		<!-- </div> -->
+	<!-- </div> -->
+
+
+
+
+	<div style="width: 100%;background-color: #2d3436; display: flex;justify-content: center;">
+		<a href="#" style=""><img src="3209334-48.png" style="float: left;"></a>
+		<ul style="list-style-type: none;display: flex;margin: 0px;">
+			<a href="#" class="clsa"><li class="clsli" >Gallery</li></a>
+			<a href="#" class="clsa"><li class="clsli">Playlist</li></a>
+			<!-- <a href="#" class="clsa"><li class="clsli">1ccc</li></a> -->
+		</ul>
 	</div>
+
+
+
+
+
+
+
+
+	<!-- ********************************************************** -->
 	<div id="div_popup" style="">
-		<!-- <button id="popup_btn_close">x</button>	 -->	
-		<!-- <p>popup</p> --> 
 		<div id="container_div_popup">
-			<button id="popup_btn_close" onclick="close_popup()">x</button>	
+			<button id="popup_btn_close" onclick="close_popup()"><img src="309090-48.png"></button>	
 			<center>
+				<table style="width: 100%;">
+					<tr>
+						<td>
+							<span class="span_popup">nom de l'artiste:</span>
+						</td>
+						<td><input type="text" name="" id="push-input-singer" class="input_popup" placeholder="1.">
+							<!-- <input type="file" name="" id="push-input-singer" class="input_popup" placeholder="1."> -->
+							<!-- <input type="text" name="" id="push-input" placeholder="1."> -->
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="span_popup">l'album:</span>
+						</td>
+						<td>
+							<input type="text" name="" id="push-input-title" class="input_popup" placeholder="1">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="span_popup">genre musical:</span>
+						</td>
+						<td>
+							<!-- <input type="text" name="" id="push-img" class="input_popup" placeholder="2."> -->
+							<span>Rap</span><input type="radio" name="genre_msc" id="radio1" value="Rap" class="input_data">
+							<span>Pop</span><input type="radio" name="genre_msc" id="radio2" value="Pop" class="input_data">
+							<span>Classique</span><input type="radio" name="genre_msc" id="radio3" value="Classique" class="input_data">
+							<span>Chaabi</span><input type="radio" name="genre_msc" id="radio4" value="Chaabi">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="span_popup">lien du morceau:</span>
+						</td>
+						<td>
+							<input type="text" name="" id="push-input" class="input_popup" placeholder="3.">
+						</td>
+					</tr>
+					<!-- <tr>
+						<td>
+							<span class="span_popup">description:</span>
+						</td>
+						<td>
+							<input type="text" name="" id="push-input-desc" class="input_popup" placeholder="4">
+						</td>
+					</tr> -->
+					<tr>
+						<td colspan="2"><center><button class="btn_push" onclick="Push()" >Push</button></center></td>
+					</tr>
+					<!-- <button onclick="tt()">cc</button><span id="aff"></span> -->
+					
+				</table>
+
+
+
+
+
+				<!-- ************************************************************** -->
 				<!-- <div style=""> -->
 					<!-- <input type="file" name="" class="input_popup" id="push-input" placeholder="1."><br> -->
-					<input type="text" name="" class="input_popup" id="push-input" placeholder="1."><br>
-					<input type="file" name="" class="input_popup" id="push-img" placeholder="1"><br>
-					<input type="text" name="" class="input_popup" id="push-input-singer" placeholder="2."><br>
+					<!-- <span class="span_popup">mp3:</span> <input type="text" name="" class="input_popup" id="push-input" placeholder="1."><br>
+					<span class="span_popup">img:</span><br>
+					<span class="span_popup">singer:</span><input type="text" name="" class="input_popup" id="push-input-singer" placeholder="2."><br> -->
 				<!-- </div> -->
 				<!-- <div style=""> -->
-					<input type="text" name="" class="input_popup" id="push-input-title" placeholder="3."><br>
-					<input type="text" name="" class="input_popup" id="push-input-desc" placeholder="4">
+					<!-- <span class="span_popup">title:</span><input type="text" name="" class="input_popup" id="push-input-title" placeholder="3."><br>
+					<span class="span_popup">description:</span><input type="text" name="" class="input_popup" id="push-input-desc" placeholder="4"><br><br> -->
 				<!-- </div> -->
-			</center>
-			<center><button onclick="Push()" >Push</button></center>
+			<!-- </center> -->
+			<!-- <div style="width: 100%;justify-content: center;">
+				<button style="align-content: center;" onclick="Push()" >Push1</button>
+			</div> -->
+			<!-- <center><button style="align-content: center;" onclick="Push()" >Push</button></center> -->
+			<!-- ******************************************************************** -->
 		</div>
 	</div>
+
+	<!-- ********************************************************** -->
 	<section id="section_1">
 		<div id="container_section_1">
 			<div id="section_1_content_1">
 				<img src="person-s-gray-hoodie-1482476.jpg">
 			</div>
 			<div id="section_1_content_2">
-				<h3>singer<span id="singer" style=""></h3>
-				<h1>title</span><span id="title" style=""></h1>
-				<h3>description<span id="description" style=""></h3>
-				<div id="section_1_content_2_div_btn">
-					<button onclick="" >remove ferst</button>
-					<button onclick="Pop()" id="pop-button" >remove last</button>
+				<div id="section_1_content_2_div">
+					<h3>nom de l'artiste: <span id="singer" style=""></h3>
+					<h1>l'album: </span><span id="title" style=""></h1>
+					<h3>genre musical: <span id="genre" style=""></h3>
+					<div id="section_1_content_2_div_btn">
+						<button onclick="Pop()" id="rmv_f" >remove last</button>
+						<button onclick="" id="pop-button" >remove ferst</button>
+					</div>
 				</div>
 			</div>
 			<div id="section_1_content_3">
-				<button class="btn-l" onclick="popup()">+</button>
+				<button id="popup_btn" onclick="popup()"><img src="3209334-48.png"></button>
 			</div>
 		</div>
 	</section>
 	<section id="section_2">
-		<table border="1px" id="teble_playlist">
+		<table id="teble_playlist">
 			<tr>
 				<th>TITLE</th>
 				<th>ARTIST</th>
 				<th>description</th>
-				<th>img</th>
+			
 			</tr>
 			<tr>
 				<td>TITLE1</td>
 				<td>ARTIST1</td>
 				<td>description1</td>
-				<td>img1</td>
+				
 			</tr>
 			<tr>
 				<td>TITLE2</td>
 				<td>ARTIST2</td>
 				<td>description2</td>
-				<td>img2</td>
+				
 			</tr>
 			<tr>
 				<td>TITLE3</td>
 				<td>ARTIST3</td>
 				<td>description3</td>
-				<td>img3</td>
+				
 			</tr>
 			<tr>
 				<td>TITLE4</td>
 				<td>ARTIST4</td>
 				<td>description4</td>
-				<td>img4</td>
+				
 			</tr>
 		</table>
 	</section>
-	<div id="lecture_mp3">
-		<center>
-			<div style="display: flex;width: 50%">
-				<button id="top-button" onclick="Peak()" ><</button>
-				<h3><b>Result: </b><span id="result"></span></h3>
-				<button id="bottom-button" onclick="Low()"  >></button>
-			</div>
-		</center>
-	</div>
+	<center>
+	<center>
+		<div id="lecture_mp3">
+			<center>
+				<div style="display: flex;width: 50%;justify-content: center;">
+					<button id="top-button" onclick="Peak()" class="btn-navigation" ><img src="293696-48.png" ></button>
+					<h3><b>Result: </b><span id="result"></span></h3>
+					<button id="bottom-button" onclick="Low()" class="btn-navigation" ><img src="293690-48.png"></button>
+				</div>
+			</center>
+		</div>
+	</center>
 	<script src="script_playlist.js" ></script>
 </body>
 </html>
