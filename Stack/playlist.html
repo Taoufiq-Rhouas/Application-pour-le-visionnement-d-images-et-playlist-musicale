@@ -15,17 +15,34 @@
 		
 
 
-		.clsa{
-			text-decoration: none;
+		/*.clsa{*/
+			/*text-decoration: none;*/
 			/*background-color: yellow;*/
 			/*padding: 10px;*/
+			/*margin: 0px 15px 0px 15px;*/
+
+		/*}*/
+		/*.clsli{*/
+			/*background-color: #636e72;*/
+			/*padding: 10px;*/
+			/*margin: 0px 5px 0px 5px;*/
+		/*}*/
+		.clsa{
+			text-decoration: none;
 			margin: 0px 15px 0px 15px;
 
 		}
 		.clsli{
 			background-color: #636e72;
-			padding: 10px;
-			/*margin: 0px 5px 0px 5px;*/
+			padding: 14px 35px;
+			color: white;
+			font-family: cursive;
+		}
+		.clsli:hover {
+			background-color:  #747d8c;
+		}
+		.active {
+		  background-color: #2f3542;
 		}
 
 
@@ -44,13 +61,17 @@
 		#section_1_content_1{
 			width: 20%;
 		}
+		/*#section_1_content_1 img{
+			margin-top: 40px;
+		}*/
 		#section_1_content_2{
-			width: 70%;
+			width: 76%;
 			/*background-color: red;*/
 			background-color: transparent;
+			margin-top: 40px;
 		}
 		#section_1_content_3{
-			width: 10%;
+			width: 24%;
 		}
 		#section_1_content_2_div_btn{
 			display: flex;
@@ -94,6 +115,7 @@
 			border:none;
 			outline: none;
 			cursor: pointer;
+			margin-top: 10px;
 		}
 		#container_div_popup{
 			width: 100%;
@@ -132,6 +154,7 @@
 			margin: 5px;
 			border-radius: 10px;
 			box-shadow: 0 0 0.5em #55efc4;
+			margin-top: 40px;
 		}
 		#section_1_content_2_div{
 			/*background-color: yellow;*/
@@ -272,12 +295,11 @@
 
 
 
-	<div style="width: 100%;background-color: #2d3436; display: flex;justify-content: center;">
-		<a href="#" style=""><img src="3209334-48.png" style="float: left;"></a>
+	<div style="width: 100%;background-color: #57606f; display: flex;justify-content: center;">
+		<a href="index.html" id="a_menu" style="position: absolute;left: 0px;margin-left: 20px;"><img src="2949903-48.png" style=""></a>
 		<ul style="list-style-type: none;display: flex;margin: 0px;">
-			<a href="#" class="clsa"><li class="clsli" >Gallery</li></a>
-			<a href="#" class="clsa"><li class="clsli">Playlist</li></a>
-			<!-- <a href="#" class="clsa"><li class="clsli">1ccc</li></a> -->
+			<a href="galerie.html" class="clsa"><li class="clsli" >Gallery</li></a>
+			<a href="playlist.html" class="clsa"><li class="clsli">Playlist</li></a>
 		</ul>
 	</div>
 
@@ -367,7 +389,7 @@
 				</div>
 			</div>
 			<div id="section_1_content_3">
-				<button id="popup_btn" onclick="popup()"><img src="3209334-48.png"></button>
+				<button id="popup_btn" onclick="popup()"><img src="103490-64.png"></button>
 			</div>
 		</div>
 	</section>

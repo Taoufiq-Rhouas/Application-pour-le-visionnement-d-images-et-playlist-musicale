@@ -5,7 +5,7 @@ body {
   background-size: cover;
 }
 
-#menu {
+/*#menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,8 +51,26 @@ body {
 #menu #div_rst {
   width: 30%;
   background-color: #57606f;
-}
+}*/
 
+
+
+.clsa{
+      text-decoration: none;
+      margin: 0px 15px 0px 15px;
+
+    }
+    .clsli{
+      background-color: #636e72;
+      padding: 14px 35px;
+      color: white;
+      font-family: cursive;
+    }
+    .clsli:hover {
+      background-color:  #747d8c;
+    }
+
+    
 .active {
   background-color: #2f3542;
 }
