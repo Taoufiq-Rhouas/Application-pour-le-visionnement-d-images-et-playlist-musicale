@@ -23,7 +23,6 @@ class Stack{
 
 
 
-
         //-------------------------------------//
         // Get nom image
         var nomimg = document.getElementById("nom-img");
@@ -62,7 +61,6 @@ class Stack{
             //*************************
 
 
-
             nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.top]+'</span></span>';
             lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.top]+'</span></span>';
             tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.top]+'</span></span>';
@@ -87,7 +85,6 @@ class Stack{
 
 
         //-------------------------------------//
-
 
 
         // Get singer
