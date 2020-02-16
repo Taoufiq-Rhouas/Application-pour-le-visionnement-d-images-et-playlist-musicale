@@ -1,7 +1,7 @@
 class Stack{
     constructor(){
         this.stack = [];
-        this.singer = [];
+        this.creator = [];
         this.title = [];
         this.top = null;
         this.size = 0;
@@ -14,8 +14,8 @@ class Stack{
 
         //-------------------------------------//
 
-        // Get singer From Input
-        var pushinputsinger = document.getElementById("push-input-singer");
+        // Get creator From Input
+        var pushinputcreator = document.getElementById("push-input-creator");
 
         // Get title From Input
         var pushinputtitle = document.getElementById("push-input-title");
@@ -33,8 +33,8 @@ class Stack{
 
         //-------------------------------------//
 
-        // Get singer
-        var singer = document.getElementById("singer");
+        // Get creator
+        var creator = document.getElementById("creator");
 
         // Get title
         var title = document.getElementById("title");
@@ -58,18 +58,19 @@ class Stack{
 
             this.stack[this.top] = pushInput.value;
 
-            this.singer[this.top] = pushinputsinger.value;
+            this.creator[this.top] = pushinputcreator.value;
 
             this.title[this.top] = pushinputtitle.value;
 
             // Set result
             // result.innerHTML = this.stack[this.top];
             // result.innerHTML = '<img src="'+this.stack[this.top]+'" >';
-            result.innerHTML = '<img src="'+this.stack[this.top]+'">';
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
+
 
             //------------------------//
 
-            singer.innerHTML = this.singer[this.top];
+            creator.innerHTML = this.creator[this.top];
 
 
             title.innerHTML = this.title[this.top];
@@ -102,8 +103,8 @@ class Stack{
 
         //-------------------------------------//
 
-        // Get singer From Input
-        var pushinputsinger = document.getElementById("push-input-singer");
+        // Get creator From Input
+        var pushinputcreator = document.getElementById("push-input-creator");
 
         // Get title From Input
         var pushinputtitle = document.getElementById("push-input-title");
@@ -117,8 +118,8 @@ class Stack{
 
         //-------------------------------------//
 
-        // Get singer
-        var singer = document.getElementById("singer");
+        // Get creator
+        var creator = document.getElementById("creator");
 
         // Get title
         var title = document.getElementById("title");
@@ -135,17 +136,16 @@ class Stack{
         }else{
             // delete this.stack[this.size];
             this.stack.splice(this.top);
-            this.singer.splice(this.top);
+            this.creator.splice(this.top);
             this.title.splice(this.top);
             this.top--;
             this.size--;
-            // result.innerHTML = this.stack[this.top];
-            // result.innerHTML = '<img src="'+this.stack[this.top]+'" >';
-            result.innerHTML = '<img src="'+this.stack[this.top]+'">';
+            
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
 
             //------------------------//
 
-            singer.innerHTML = this.singer[this.top];
+            creator.innerHTML = this.creator[this.top];
 
 
             title.innerHTML = this.title[this.top];
@@ -179,7 +179,7 @@ class Stack{
 
         //-----------------------------//
 
-        var singer = document.getElementById("singer");
+        var creator = document.getElementById("creator");
 
         var title = document.getElementById("title");
 
@@ -195,15 +195,14 @@ class Stack{
         // check if we are not arrive to top one 
         if (this.size == Number(this.stack.length-1)){
             topButton.disabled = true;
-            // this.top++;
+            
             this.size++;
-            // result.innerHTML = this.stack[this.size];
-            // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<img src="'+this.stack[this.size]+'">';
+
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
 
             //----------------------//
 
-            singer.innerHTML = this.singer[this.size];
+            creator.innerHTML = this.creator[this.size];
 
 
             title.innerHTML = this.title[this.size];
@@ -215,11 +214,11 @@ class Stack{
             this.size++;
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<img src="'+this.stack[this.size]+'">';
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
 
             //-------------------------------//
 
-            singer.innerHTML = this.singer[this.size];
+            creator.innerHTML = this.creator[this.size];
 
 
             title.innerHTML = this.title[this.size];
@@ -240,7 +239,7 @@ class Stack{
 
         //-----------------------------//
 
-        var singer = document.getElementById("singer");
+        var creator = document.getElementById("creator");
 
         var title = document.getElementById("title");
 
@@ -258,11 +257,11 @@ class Stack{
             
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-            result.innerHTML = '<img src="'+this.stack[this.size]+'">';
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
 
             //------------------------------------//
 
-            singer.innerHTML = this.singer[this.size];
+            creator.innerHTML = this.creator[this.size];
 
 
             title.innerHTML = this.title[this.size];
@@ -272,11 +271,10 @@ class Stack{
             this.size--;
             // result.innerHTML = this.stack[this.size];
             // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';   
-            result.innerHTML = '<img src="'+this.stack[this.size]+'">';
-
+            result.innerHTML = '<img src="'+this.stack[this.top]+'" />';
             //---------------------------------------//
 
-            singer.innerHTML = this.singer[this.size];
+            creator.innerHTML = this.creator[this.size];
 
 
             title.innerHTML = this.title[this.size];
