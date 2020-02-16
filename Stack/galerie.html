@@ -1,82 +1,386 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>gallery</title>
 	<style type="text/css">
-		
+		body{
+			margin: 0px;
+			padding: 0px;
+			background: -webkit-gradient(linear, left top, left bottom, from(#3F3F3F), to(#1A171A)) fixed;
+			font-family: cursive;
+		}
+		.clsa{
+			text-decoration: none;
+			margin: 0px 15px 0px 15px;
+
+		}
+		.clsli{
+			background-color: #636e72;
+			padding: 10px 30px;
+			color: white;
+			font-family: cursive;
+		}
+		.clsli:hover {
+			background-color:  #747d8c;
+		}
+
+
+
+		 /*********************************************************** */
+		#div_popup{
+			position: absolute;
+			background-color: #636e72;
+			margin-top: 10%;
+			margin-left: 30%;
+			align-items: center;
+			padding: 0.5% 2% 2% 2%;
+			display: none;
+			opacity: 100% !important;
+			z-index: 1;
+			box-shadow: 0 0 6em #55efc4;
+			border-radius: 10px;
+			width: 30%;
+		}
+		#popup_btn{
+			background-color: transparent;
+			border:none;
+			outline: none;
+			cursor: pointer;
+			outline: none;
+		}
+		#container_div_popup{
+			width: 100%;
+		}
+		.input_popup{
+			border-radius: 5px;
+			width: 90%;
+			border:none;
+			font-size: 15px;
+			margin: 5px 0px;
+		}
+		.span_popup{
+			color: white;
+			font-size: 15px;
+		}
+		#popup_btn_close{
+			margin-left: 95%;
+			background-color: transparent;
+			border:none;
+			outline: none;
+			cursor: pointer;
+		}
+		.btn_push{
+			padding: 8px 30px;
+			background-color: transparent;
+			border-radius: 50px;
+			border-color: white;
+			color: white;
+			outline: none;
+			margin-top: 20px;
+		}
+		/*********************************************************** */
+
+		#container_section1{
+			display: flex;
+			width: 100%;
+		}
+		#div1_container_section1{
+			width: 80%;
+			background-color: transparent;
+		}
+		#div2_container_section1{
+			width: 20%;
+			background-color: transparent;
+		}
+		#popup_btn{
+			background-color: transparent;
+			border:none;
+			outline: none;
+			cursor: pointer;
+		}
+
+		#container_section2{
+			display: flex;
+			width: 100%;
+		}
+		#div1_section2{
+			width: 25%;
+			background-color: transparent;
+		}
+
+		/********************bttton*******************/
+		#top-button{
+			width: 60%;
+			transition: 0.5s;
+			float: right;
+			margin-top: 20%
+			outline:none;
+		}
+		#top-button img{
+			width: 100%;
+			margin: 0%
+		}
+		#top-button:hover{
+			width: 100%;
+		}
+		#bottom-button{
+			width: 60%;
+			transition: 0.5s;
+			float: left;
+			margin-top: 20%
+			outline:none;
+		}
+		#bottom-button img{
+			width: 100%;
+			margin: 0%
+		}
+		#bottom-button:hover{
+			width: 100%;
+		}
+
+		/********************bttton*******************/
+		#div2_section2{
+			background-color: transparent;
+			width: 50%;
+		}
+		#div2_section2_content{
+			background-color: green;
+			justify-content: center;
+			display: flex;
+			width: 100%;
+			position: relative;
+		}
+		#result{
+			width: 100%;
+		}
+		#result img{
+			width: 100%;
+		}
+		#div3_section2{
+			width: 25%;
+			background-color: transparent;
+		}
+		#div1_section3{
+			display: flex;
+			justify-content: space-between;
+			width: 75%;
+			background-color: transparent;
+		}
+
+
+
+
+		/********************************************/
+		#section3{
+			position: absolute;
+			width: 100%;
+			bottom: 0px;
+			margin-bottom: 30px;
+			} 
+		#container_section3{
+			width: 100%;
+			background-color: transparent;
+			margin-top: 20px;
+			display: flex;
+			justify-content: center;
+		}
+		#div_detail{
+			position: absolute;
+			background-color: transparent;
+			align-items: center;
+			margin-top: 12%;
+			width: 50%;
+			display: none;
+		}
+		#rmv_f{
+			background-color: #2ecc71;
+			color: white;
+			border:none;
+			padding: 15px 30px;
+			border-radius: 50px;
+			font-family: cursive;
+			font-size: 20px;
+			box-shadow: 0 0 0.9em #55efc4;
+			cursor: pointer;
+		}
+		#rmv_f:hover{
+			box-shadow: 0 0 2em #55efc4;
+		}
+		#pop-button{
+			background-color: #2ecc71;
+			color: white;
+			border:none;
+			padding: 15px 30px;
+			border-radius: 50px;
+			font-family: cursive;
+			font-size: 20px;
+			box-shadow: 0 0 0.9em #55efc4;
+			cursor: pointer;
+		}
+		#pop-button:hover{
+			box-shadow: 0 0 2em #55efc4;
+		}
+
+
+		/************************************************************************************/
+		#div2_section2 .wrapper{
+			position: relative;
+			font-family: sans-serif;
+			width: 100%;
+			box-shadow: 0 0 2em #55efc4;
+			border-radius: 10px;
+		}
+		#div2_section2 .wrapper #result img{
+			display: block;
+			width: 100%;
+			border-radius: 10px;
+
+		}
+		#div2_section2 .wrapper .overlay .content{
+			width: 100%;
+			transform: translate(-50%; -50%);
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 28px;
+			border-radius: 10px;
+		}
+		#div2_section2 .wrapper .overlay{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: .5s ease;
+			background: rgba(255, 119, 29, 0.7);
+			border-radius: 10px;
+
+		}
+		#div2_section2 .wrapper:hover .overlay{
+			opacity: 1;
+		}
+		#section2{
+			margin-bottom: 40px;
+		}
+
+
+		/*********************************************************************************************/
 	</style>
-	
+
+	<script type="text/javascript">
+		function popup(){
+			document.getElementById('div_popup').style.display="block";
+			document.getElementById('section1').style.opacity="20%";
+			document.getElementById('section2').style.opacity="10%";
+			document.getElementById('section3').style.opacity="10%";			
+		}
+		function close_popup(){
+			document.getElementById('div_popup').style.display="none";
+			document.getElementById('section1').style.opacity="100%";
+			document.getElementById('section2').style.opacity="100%";
+			document.getElementById('section3').style.opacity="100%";
+		}
+	</script>
 </head>
-<!-- <body onload="test()" > -->
-<body >
-	<!-- <input type="button" name="" value="homme"> -->
-	<!-- <a href="index.html">homme</a> -->
-	<div id="menu">
-		<div id="div_logo">
-			<a href="index.html"><img src="2949883-48.png" style="margin-left: 10px;margin-top: 4px;"></a>
-		</div>
-		<div id="div_menu">
-			<ul>
-				<li id="l1">
-					<a href="index.html">Accueil</a>
-				</li>
-				<li id="l2">
-					<a href="galerie.html" class="active">Galerie</a>
-				</li>
-				<li id="l3">
-					<a href="playlist.html">Playlist</a>
-				</li>
-			</ul>
-		</div>
-		<div id="div_rst">
-			<p></p>
-		</div>
+<body>
+	<div style="width: 100%;background-color: #57606f; display: flex;justify-content: center;">
+		<a href="index.html" id="a_menu" style="position: absolute;left: 0px;margin-left: 20px;"><img src="2949903-48.png" style=""></a>
+		<ul style="list-style-type: none;display: flex;margin: 0px;">
+			<a href="galerie.html" class="clsa"><li class="clsli" >Gallery</li></a>
+			<a href="playlist.html" class="clsa"><li class="clsli">Playlist</li></a>
+		</ul>
 	</div>
-	<section>
-		<div>
+
+
+	<!-- ********************************************************** -->
+	<div id="div_popup" style="">
+		<div id="container_div_popup">
+			<button id="popup_btn_close" onclick="close_popup()"><img src="309090-48.png"></button>	
 			<center>
-				<h1 id="titre">Stack: Galerie</h1>
-				<div id="container">
-					<!-- Input -->
-					<div id="container-1">
-						<input type="text" name="" class="node-at-head" id="push-input" placeholder="Data"><br>
-						<input type="text" id="push-input-singer" placeholder="Name">
-						<input type="text" id="push-input-title" placeholder="Description"><br>
-					</div>
-					<div id="container-2">
-						<button onclick="Push()" class="btn-l">Push</button>
-        				<button onclick="Pop()" id="pop-button" class="btn-r">Pop</button>
-        			</div>
-        			<div>
-        				<br><span id="imagsinger"></span><br>
-        				<!-- <br><span id="singer">a</span><br>
-        				<span id="title">a</span><br> -->
-        			</div>
-					<div id="container-3" style="">
-						<button id="top-button" onclick="Peak()" >&#8679;</button>
-						<div id="img_description">
-							<div id="rs" style="">
-								<h3><b>Result: </b><span id="result"></span></h3>
-							</div>
-							<div id="ds" style="">
-								<div style="">
-									<span style="">Name:</span><span id="singer" style=""></span><br>
-        							<span style="">Description:</span><span id="title" style=""></span><br>
-								</div>
-							</div>
-						</div>
-						<!-- <h3><b>Result: </b><span id="result"><img src="nettoyage-bureau-casablanca.jpg"></span></h3> -->
-						<!-- <h3><b>Result: </b><img src="" id="result"></h3> -->
-						<!-- <audio controls>
-						  <source src="kotokoto-TRASH-.mp3" type="audio/mpeg">
-						</audio> -->
-        				<button id="bottom-button" onclick="Low()"  >&#8681;</button>
-					</div>
-				</div>
+				<table style="width: 100%;">
+					<tr>
+						<td>
+							<span class="span_popup">nom de l'image:</span>
+						</td>
+						<td><input type="text" name="" id="push-input-nom-img" class="input_popup" placeholder="1.">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="span_popup">lien de l'image:</span>
+						</td>
+						<td>
+							<input type="text" name="" id="push-input" class="input_popup" placeholder="1">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="span_popup">tags associés:</span>
+						</td>
+						<td>
+							<input type="text" name="" id="push-tags" class="input_popup" placeholder="3.">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><button class="btn_push" onclick="Push()" >Push</button></center></td>
+					</tr>					
+				</table>
 			</center>
 		</div>
+	</div>
+
+	<!-- ********************************************************** -->
+
+	<section id="section1">
+		<div id="container_section1">
+			<div id="div1_container_section1">
+				<!-- <p>1</p> -->
+			</div>
+			<div id="div2_container_section1">
+				<button id="popup_btn" onclick="popup()"><img src="103478-64.png"></button>
+			</div>
+		</div>
 	</section>
-	<script src="galerie.js" ></script>
+
+	<!-- ********************************************************** -->
+	<section id="section2">
+		<div id="container_section2">
+			<div id="div1_section2">
+				<button id="top-button" onclick="Peak()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;"><img src="186410-512 (1).png"></button>
+			</div>
+			<div id="div2_section2">
+				<div class="wrapper">
+					<span id="result"></span>
+					<div class="overlay">
+						<div class="content">
+							<center>
+								<div style="margin-top: 20%;width: 100%;padding: 5% 0%;font-family: cursive;">
+									<span id="nom-img"></span><br><br>
+									<span id="lien-img"></span><br><br>
+									<span id="tags-img"></span>
+								</div>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="div3_section2">
+				<div style="position: relative;">
+					<button id="bottom-button" onclick="Low()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;"  ><img src="186409-512 (1).png"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ******************************************************************************* -->
+	<section id="section3">
+		<div id="container_section3">
+			<div id="div1_section3">
+				<button onclick="Pop()" id="pop-button">remove last</button><!-- Pop -->
+				<button onclick="Pop()" id="rmv_f">remove ferst</button>
+			</div>
+		</div>
+	</section>
+	<script src="script_galerie.js" ></script>
 </body>
 </html>
-

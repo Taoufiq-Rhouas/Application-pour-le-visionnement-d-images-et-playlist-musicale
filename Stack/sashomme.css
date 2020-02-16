@@ -1,0 +1,123 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("person-s-gray-hoodie-1482476.jpg");
+  background-size: cover;
+}
+
+#menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#menu #div_logo {
+  width: 30%;
+  background-color: #57606f;
+}
+
+#menu #div_menu {
+  background-color: #57606f;
+  width: 40%;
+}
+
+#menu #div_menu ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #57606f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menu #div_menu ul li a {
+  color: white;
+  text-align: center;
+  padding: 16px 100px;
+  display: block;
+  text-decoration: none;
+  font-family: cursive;
+}
+
+#menu #div_menu ul li a:hover {
+  background-color: #747d8c;
+}
+
+#menu #div_rst {
+  width: 30%;
+  background-color: #57606f;
+}
+
+.active {
+  background-color: #2f3542;
+}
+
+#div_container_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*justify-content: center;*/
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 400px;
+  width: 66%;
+}
+
+#btn_galerie {
+  background-color: #8395a7;
+  color: #0abde3;
+  padding: 120px 240px;
+  opacity: 80%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 15px;
+  font-size: 30px;
+  -webkit-box-shadow: 0 0 6em #0abde3;
+          box-shadow: 0 0 6em #0abde3;
+  text-decoration: none;
+  font-family: cursive;
+  background-image: url(211678-256.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#btn_playlist {
+  background-color: #8395a7;
+  color: #0abde3;
+  padding: 120px 240px;
+  opacity: 80%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 15px;
+  font-size: 30px;
+  -webkit-box-shadow: 0 0 6em #0abde3;
+          box-shadow: 0 0 6em #0abde3;
+  text-decoration: none;
+  font-family: cursive;
+  background-image: url(3695056-256.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#btn_galerie:hover {
+  background-color: #8395a7;
+  color: #3d3d3d;
+  padding: 150px 250px;
+  opacity: 100%;
+  font-size: 50px;
+}
+
+#btn_playlist:hover {
+  background-color: #8395a7;
+  color: #3d3d3d;
+  padding: 150px 250px;
+  opacity: 100%;
+  font-size: 50px;
+}
+/*# sourceMappingURL=sashomme.css.map */
