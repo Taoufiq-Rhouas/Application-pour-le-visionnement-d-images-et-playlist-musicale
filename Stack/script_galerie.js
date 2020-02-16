@@ -61,9 +61,11 @@ class Stack{
 
             //*************************
 
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.top]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.top]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.top]+'</span>';
+
+
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.top]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.top]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.top]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.top]+'">';
 
 
@@ -118,7 +120,8 @@ class Stack{
             nomimg.innerHTML = "";
             lienimg.innerHTML = "";
             tagsimg.innerHTML = "";
-            result.innerHTML = "gallery is empty";
+            // result.innerHTML = "gallery is empty";
+            result.innerHTML = `<img src="null.jpg" />`;
         }else{
             // delete this.stack[this.size];
 
@@ -133,9 +136,9 @@ class Stack{
             // ******************************
 
 
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.top]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.top]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.top]+'</span>';
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.top]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.top]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.top]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.top]+'">';
 
             //-----------------------//
@@ -194,10 +197,10 @@ class Stack{
             topButton.disabled = true;
             // this.top++;
             this.size++;
-            
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.size]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.size]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.size]+'</span>';
+
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.size]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.size]+'">';
 
             //-------------------------//
@@ -206,9 +209,9 @@ class Stack{
         }else{
             this.size++;
 
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.size]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.size]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.size]+'</span>';
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.size]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.size]+'">';
 
             //---------------------------------//
@@ -254,9 +257,9 @@ class Stack{
         // check if we are in firt value at bottom
         if(this.size == 0){
 
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.size]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.size]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.size]+'</span>';
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.size]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.size]+'">';
 
 
@@ -264,9 +267,9 @@ class Stack{
         }else{            
             this.size--;
 
-            nomimg.innerHTML ='<span>NOM DE LIMAGE:'+this.nomimg[this.size]+'</span>' ;
-            lienimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.lienimg[this.size]+'</span>';
-            tagsimg.innerHTML ='<span>LIEN DE LIMAGE:'+this.tags[this.size]+'</span>';
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.size]+'</span></span>';
             result.innerHTML = '<img src="'+this.lienimg[this.size]+'">';
         }
 

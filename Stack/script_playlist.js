@@ -23,6 +23,8 @@ class Stack {
     var r2 = document.getElementById("radio2").checked;
     var r3 = document.getElementById("radio3").checked;
     var r4 = document.getElementById("radio4").checked;
+
+    var section_1_content_1 = document.getElementById('section_1_content_1');
     
     var im;
     if (r1) {
@@ -136,12 +138,15 @@ class Stack {
     // Pop Button
     var popButton = document.getElementById("pop-button");
 
+    var section_1_content_1 = document.getElementById('section_1_content_1');
+
     if (this.size == 1) {
       popButton.disabled = true;
       artiste.innerHTML = "Vide";
       album.innerHTML = "Vide";
       genremsc.innerHTML = "Vide";
-      result.innerHTML = "Playlist Vide";
+      // result.innerHTML = "Playlist Vide";
+      section_1_content_1.innerHTML = `<img src="null.jpg" />`;
     } else {
       // delete this.stack[this.size];
 
@@ -167,6 +172,42 @@ class Stack {
         "</td><td>" +
         this.genremsc[this.top] +
         "</td></tr>";
+
+
+        // **********************************
+
+
+        var im;
+        if (this.genremsc[this.size] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
+
+
+
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
       bottomButton.disabled = false;
@@ -199,6 +240,8 @@ class Stack {
     // Get Result
     var result = document.getElementById("result");
     var teble_playlist = document.getElementById("teble_playlist");
+
+    var section_1_content_1 = document.getElementById('section_1_content_1');
 
    
     //-----------------------------//
@@ -233,6 +276,40 @@ class Stack {
         "</td><td>" +
         this.genremsc[this.size] +
         "</td></tr>";
+
+
+
+        // *********************************************
+
+        var im;
+        if (this.genremsc[this.size] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
+
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
       // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
@@ -267,6 +344,38 @@ class Stack {
         this.genremsc[this.size] +
         "</td></tr>";
 
+
+        // *********************************************
+
+
+        var im;
+        if (this.genremsc[this.size] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
         section_1_content_1.innerHTML = `<img src=${im} />`;
       
 
@@ -294,6 +403,10 @@ class Stack {
 
     // Get Result
     var result = document.getElementById("result");
+
+
+    var section_1_content_1 = document.getElementById('section_1_content_1');
+
 
   
     //-----------------------------//
@@ -323,6 +436,38 @@ class Stack {
         "</td><td>" +
         this.genremsc[this.size] +
         "</td></tr>";
+
+
+        // ***************************************
+
+        var im;
+        if (this.genremsc[this.size] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
       
@@ -348,6 +493,39 @@ class Stack {
         "</td><td>" +
         this.genremsc[this.size] +
         "</td></tr>";
+
+
+
+        // *****************************************
+
+        var im;
+        if (this.genremsc[this.size] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[this.size] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
 
         section_1_content_1.innerHTML = `<img src=${im} />`;
     }

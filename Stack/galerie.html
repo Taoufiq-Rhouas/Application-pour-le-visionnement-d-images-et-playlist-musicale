@@ -203,6 +203,7 @@
 			font-size: 20px;
 			box-shadow: 0 0 0.9em #55efc4;
 			cursor: pointer;
+			outline: none;
 		}
 		#rmv_f:hover{
 			box-shadow: 0 0 2em #55efc4;
@@ -217,6 +218,7 @@
 			font-size: 20px;
 			box-shadow: 0 0 0.9em #55efc4;
 			cursor: pointer;
+			outline: none;
 		}
 		#pop-button:hover{
 			box-shadow: 0 0 2em #55efc4;
@@ -265,6 +267,16 @@
 		}
 
 
+		#bottom-button:focus {
+			/*transition: 1s;*/
+		  	box-shadow: 0 0 2em #55efc4;
+		}
+		#top-button:focus {
+			/*transition: 1s;*/
+		  	box-shadow: 0 0 2em #55efc4;
+		}
+
+
 		/*********************************************************************************************/
 	</style>
 
@@ -303,7 +315,7 @@
 						<td>
 							<span class="span_popup">nom de l'image:</span>
 						</td>
-						<td><input type="text" name="" id="push-input-nom-img" class="input_popup" placeholder="1.">
+						<td><input type="text" name="" id="push-input-nom-img" class="input_popup" placeholder="nom de l'image">
 						</td>
 					</tr>
 					<tr>
@@ -311,7 +323,7 @@
 							<span class="span_popup">lien de l'image:</span>
 						</td>
 						<td>
-							<input type="text" name="" id="push-input" class="input_popup" placeholder="1">
+							<input type="text" name="" id="push-input" class="input_popup" placeholder="lien de l'image">
 						</td>
 					</tr>
 					<tr>
@@ -319,7 +331,7 @@
 							<span class="span_popup">tags associés:</span>
 						</td>
 						<td>
-							<input type="text" name="" id="push-tags" class="input_popup" placeholder="3.">
+							<input type="text" name="" id="push-tags" class="input_popup" placeholder="tags associés">
 						</td>
 					</tr>
 					<tr>
@@ -347,7 +359,7 @@
 	<section id="section2">
 		<div id="container_section2">
 			<div id="div1_section2">
-				<button id="top-button" onclick="Peak()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;"><img src="186410-512 (1).png"></button>
+				<button id="top-button" onclick="Peak()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;outline: none;transition: 0.5s;"><img src="186410-512 (1).png"></button>
 			</div>
 			<div id="div2_section2">
 				<div class="wrapper">
@@ -367,7 +379,7 @@
 			</div>
 			<div id="div3_section2">
 				<div style="position: relative;">
-					<button id="bottom-button" onclick="Low()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;"  ><img src="186409-512 (1).png"></button>
+					<button id="bottom-button" onclick="Low()" style="border-radius:300px;border: none;background-color: transparent;cursor: pointer;outline: none;transition: 0.5s;"  ><img src="186409-512 (1).png"></button>
 				</div>
 			</div>
 		</div>
