@@ -145,7 +145,7 @@ class Stack {
       artiste.innerHTML = "Vide";
       album.innerHTML = "Vide";
       genremsc.innerHTML = "Vide";
-      // result.innerHTML = "Playlist Vide";
+      result.innerHTML = "Playlist Vide";
       section_1_content_1.innerHTML = `<img src="null.jpg" />`;
     } else {
       // delete this.stack[this.size];
