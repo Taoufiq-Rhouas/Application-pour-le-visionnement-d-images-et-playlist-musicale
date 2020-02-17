@@ -257,7 +257,7 @@ class Stack {
     if (this.size == Number(this.lienmsc.length - 1)) {
       topButton.disabled = true;
       // this.top++;
-      this.size++;
+      // this.size++;
       // result.innerHTML = this.stack[this.size];
       // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
 

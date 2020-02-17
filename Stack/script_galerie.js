@@ -193,7 +193,7 @@ class Stack{
         if (this.size == Number(this.lienimg.length-1)){
             topButton.disabled = true;
             // this.top++;
-            this.size++;
+            // this.size++;
 
             nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
             lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
