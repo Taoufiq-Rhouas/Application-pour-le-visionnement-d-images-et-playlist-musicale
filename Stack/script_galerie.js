@@ -119,6 +119,7 @@ class Stack{
             tagsimg.innerHTML = "";
             // result.innerHTML = "gallery is empty";
             result.innerHTML = `<img src="null.jpg" />`;
+            bottomButton.disabled = true;
         }else{
             // delete this.stack[this.size];
 
@@ -153,11 +154,77 @@ class Stack{
         }
 
         // If stack contains one element disable bottom button
-        if (this.size == 1){
-            bottomButton.disabled = true;
-        }
+       
     }
+    // DeQueue
 
+    dequeue(){
+
+
+        //-------------------------------------//
+
+
+        // Get singer
+        var nomimg = document.getElementById("nom-img");
+
+
+
+
+        // Get title
+        var lienimg = document.getElementById("lien-img");
+
+
+
+        var tagsimg = document.getElementById("tags-img");
+
+
+
+        // Get Result
+        var result = document.getElementById("result");
+
+
+        //-------------------------------------//
+
+
+        // Pop Button
+        var popButton = document.getElementById("pop-button");
+
+        if (this.size == 1){
+            popButton.disabled = true;
+            nomimg.innerHTML = "";
+            lienimg.innerHTML = "";
+            tagsimg.innerHTML = "";
+            // result.innerHTML = "gallery is empty";
+            result.innerHTML = `<img src="null.jpg" />`;
+        }else{
+            // delete this.stack[this.size];
+
+
+            this.nomimg.shift();
+            this.lienimg.shift();
+            this.tags.shift();
+            this.top--;
+            this.size--;
+
+
+            // ******************************
+
+
+            nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[0]+'</span></span>';
+            lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[0]+'</span></span>';
+            tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[0]+'</span></span>';
+            result.innerHTML = '<img src="'+this.lienimg[0]+'">';
+
+            //-----------------------//
+
+
+            bottomButton.disabled = false;
+            console.log("Size (else pop) : " + this.size);
+        }
+
+
+
+    }
     // Top Method
     getPeak(){
 
@@ -193,7 +260,7 @@ class Stack{
         if (this.size == Number(this.lienimg.length-1)){
             topButton.disabled = true;
             // this.top++;
-            this.size++;
+            // this.size++;
 
             nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.size]+'</span></span>';
             lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.size]+'</span></span>';
@@ -219,6 +286,7 @@ class Stack{
             topButton.disabled = true;
         }
     }
+    
 
     // Low Mothod
     getLow(){
@@ -318,6 +386,6 @@ function test(){
     alert("ok");
 }
 
-function test(){
-    alert("cc");
+function deQueue(){
+    st.dequeue();
 }

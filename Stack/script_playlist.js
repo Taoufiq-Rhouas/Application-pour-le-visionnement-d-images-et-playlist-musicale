@@ -147,6 +147,7 @@ class Stack {
       genremsc.innerHTML = "Vide";
       result.innerHTML = "Playlist Vide";
       section_1_content_1.innerHTML = `<img src="null.jpg" />`;
+      bottomButton.disabled = true;
     } else {
       // delete this.stack[this.size];
 
@@ -222,11 +223,112 @@ class Stack {
     }
 
     // If stack contains one element disable bottom button
-    if (this.size == 1) {
-      bottomButton.disabled = true;
-    }
+    
   }
+  dequeue(){
 
+    var artiste = document.getElementById("singer");
+
+    // Get title
+    var album = document.getElementById("title");
+
+    var genremsc = document.getElementById("genre");
+
+    var teble_playlist = document.getElementById("teble_playlist");
+
+    // Get Result
+    var result = document.getElementById("result");
+
+    //-------------------------------------//
+
+    // Pop Button
+    var popButton = document.getElementById("pop-button");
+
+    var section_1_content_1 = document.getElementById('section_1_content_1');
+
+    if(this.size==1){
+    
+    popButton.disabled = true;
+    artiste.innerHTML = "Vide";
+    album.innerHTML = "Vide";
+    genremsc.innerHTML = "Vide";
+    result.innerHTML = "Playlist Vide";
+    section_1_content_1.innerHTML = `<img src="null.jpg" />`;
+    teble_playlist.innerHTML =
+        "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>Vide</td><td>Vide</td><td>Vide</td></tr>";
+    }else{
+      this.artiste.shift();
+      this.album.shift();
+      this.genremsc.shift();
+      this.lienmsc.shift();
+
+      this.top--;
+      this.size--;
+
+      artiste.innerHTML = this.artiste[0];
+      album.innerHTML = this.album[0];
+      genremsc.innerHTML = this.genremsc[0];
+
+  
+      
+      result.innerHTML =
+        '<audio controls><source src="' +
+        this.lienmsc[0]+
+        '" type="audio/mpeg"></audio>';
+      teble_playlist.innerHTML =
+        "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
+        this.artiste[0] +
+        "</td><td>" +
+        this.album[0] +
+        "</td><td>" +
+        this.genremsc[0] +
+        "</td></tr>";
+        
+
+
+
+        var im;
+        if (this.genremsc[0] == "Rap") {
+          // genre = "Rap";
+          im = "rap.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+
+          // alert(genre);
+        } else if (this.genremsc[0] == "Pop") {
+          // genre = "Pop";
+          im = "pop.png";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[0] == "Classique") {
+          // genre = "Classique";
+          im = "classique.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else if (this.genremsc[0] == "Chaabi") {
+          // genre = "Chaabi";
+          im = "b.jpg";
+          section_1_content_1.innerHTML = `<img src=${im} />`;
+          // alert(genre);
+        } else {
+          // genre = "null";
+          im = "null.jpg";
+          // alert(genre);
+        }
+
+
+
+
+        section_1_content_1.innerHTML = `<img src=${im} />`;
+        
+        
+      
+
+
+
+    }
+    
+
+  }
   // Top Method
   getPeak() {
     // Get singer
@@ -257,7 +359,7 @@ class Stack {
     if (this.size == Number(this.lienmsc.length - 1)) {
       topButton.disabled = true;
       // this.top++;
-      this.size++;
+      // this.size++;
       // result.innerHTML = this.stack[this.size];
       // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
 
@@ -580,6 +682,6 @@ function test() {
   alert("ok");
 }
 
-function test() {
-  alert("cc");
+function deQueue() {
+  st.dequeue();
 }
