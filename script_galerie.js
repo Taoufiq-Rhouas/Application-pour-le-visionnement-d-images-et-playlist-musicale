@@ -244,7 +244,7 @@ class Stack{
             nomimg.innerHTML ='<span  style="color: #57606f;" >NOM DE LIMAGE:<span style="color: white;" >'+this.nomimg[this.top]+'</span></span>';
             lienimg.innerHTML ='<span  style="color: #57606f;" >LIEN DE LIMAGE:<span style="color: white;" >'+this.lienimg[this.top]+'</span></span>';
             tagsimg.innerHTML ='<span  style="color: #57606f;" >TAGS ASSOCIES:<span style="color: white;" >'+this.tags[this.top]+'</span></span>';
-            result.innerHTML = '<img src="'+this.lienimg[this.size]+'">';
+            result.innerHTML = '<img src="'+this.lienimg[this.top]+'">';
             //-------------------------------------//
             bottomButton.disabled = false;     
             //-------------------------------------//

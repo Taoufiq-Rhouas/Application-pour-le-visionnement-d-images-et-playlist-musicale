@@ -32,26 +32,21 @@ class Stack {
       im = "rap.jpg";
       section_1_content_1.innerHTML = `<img src=${im} />`;
 
-      // alert(genre);
     } else if (r2 == true) {
       genre = "Pop";
       im = "pop.png";
       section_1_content_1.innerHTML = `<img src=${im} />`;
-      // alert(genre);
     } else if (r3 == true) {
       genre = "Classique";
       im = "classique.jpg";
       section_1_content_1.innerHTML = `<img src=${im} />`;
-      // alert(genre);
     } else if (r4 == true) {
       genre = "Chaabi";
       im = "b.jpg";
       section_1_content_1.innerHTML = `<img src=${im} />`;
-      // alert(genre);
     } else {
       genre = "null";
       im = "null.jpg";
-      // alert(genre);
     }
 
     // Get Data From Input
@@ -72,18 +67,18 @@ class Stack {
 
     //-------------------------------------//
 
-    //-------------------------------------//
-
     // Top Button
     var topButton = document.getElementById("top-button");
 
     // Pop Button
     var popButton = document.getElementById("pop-button");
 
-    if (pushInput.value.length > 0) {
-      this.top++;
-      this.size++;
+    var dequeueButton = document.getElementById("rmv_f");
 
+    if (pushInput.value.length > 0) {
+      this.size++;
+      this.top = this.size;
+      
       //*************************
 
       this.artiste[this.top] = pushinputsinger.value;
@@ -109,7 +104,13 @@ class Stack {
         "</td></tr>";
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
+      //*************************
       popButton.disabled = false;
+
+      dequeueButton.disabled = false;
+      console.log('---------------');
+      console.log('top:'+this.top);
+      console.log('size:'+this.size);
     }
 
     // If stack contains two elements enable bottom button
@@ -138,45 +139,64 @@ class Stack {
     // Pop Button
     var popButton = document.getElementById("pop-button");
 
+    var dequeueButton = document.getElementById("rmv_f");
+
+    var bottomButton = document.getElementById("bottom-button");
+
+    var topButton = document.getElementById("top-button");
+
     var section_1_content_1 = document.getElementById('section_1_content_1');
 
     if (this.size == 1) {
+      //-------------------------------------//
       popButton.disabled = true;
+      dequeueButton.disabled = true;
+      bottomButton.disabled = true;
+      topButton.disabled = true;
+      //-------------------------------------//
       artiste.innerHTML = "Vide";
       album.innerHTML = "Vide";
       genremsc.innerHTML = "Vide";
       result.innerHTML = "Playlist Vide";
       section_1_content_1.innerHTML = `<img src="null.jpg" />`;
-      bottomButton.disabled = true;
-    } else {
-      // delete this.stack[this.size];
-
+      //-------------------------------------//
       this.artiste.splice(this.top);
       this.album.splice(this.top);
       this.genremsc.splice(this.top);
       this.lienmsc.splice(this.top);
-      this.top--;
       this.size--;
+      this.top = this.size;
+      
+      //-------------------------------------//
+      
+    } else {
+      // delete this.stack[this.size];
 
-      artiste.innerHTML = this.artiste[this.top];
-      album.innerHTML = this.album[this.top];
-      genremsc.innerHTML = this.genremsc[this.top];
+      this.artiste.splice(this.size);
+      this.album.splice(this.size);
+      this.genremsc.splice(this.size);
+      this.lienmsc.splice(this.size);
+      this.size--;
+      this.top = this.size;
+      
+
+      artiste.innerHTML = this.artiste[this.size];
+      album.innerHTML = this.album[this.size];
+      genremsc.innerHTML = this.genremsc[this.size];
       result.innerHTML =
         '<audio controls><source src="' +
-        this.lienmsc[this.top] +
+        this.lienmsc[this.size] +
         '" type="audio/mpeg"></audio>';
       teble_playlist.innerHTML =
         "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
-        this.artiste[this.top] +
+        this.artiste[this.size] +
         "</td><td>" +
-        this.album[this.top] +
+        this.album[this.size] +
         "</td><td>" +
-        this.genremsc[this.top] +
+        this.genremsc[this.size] +
         "</td></tr>";
 
-
         // **********************************
-
 
         var im;
         if (this.genremsc[this.size] == "Rap") {
@@ -184,46 +204,32 @@ class Stack {
           im = "rap.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
 
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Pop") {
           // genre = "Pop";
           im = "pop.png";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Classique") {
           // genre = "Classique";
           im = "classique.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Chaabi") {
           // genre = "Chaabi";
           im = "b.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else {
           // genre = "null";
           im = "null.jpg";
-          // alert(genre);
         }
-
-
-
 
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
       bottomButton.disabled = false;
-      console.log("Size (else pop) : " + this.size);
-    }
-
-    console.log("Top (Pop) : " + this.top);
-    console.log("Size (Pop) : " + this.size);
-
-    for (var i = 0; i < this.lienmsc.length; i++) {
-      console.log("Stack: " + this.lienmsc[i]);
-    }
-
-    // If stack contains one element disable bottom button
-    
+      topButton.disabled = true;
+      //-------------------------------------//
+      console.log('---------------');
+      console.log('top:'+this.top);
+      console.log('size:'+this.size);
+    } 
   }
   dequeue(){
 
@@ -244,11 +250,18 @@ class Stack {
     // Pop Button
     var popButton = document.getElementById("pop-button");
 
+    var dequeueButton = document.getElementById("rmv_f");
+
     var section_1_content_1 = document.getElementById('section_1_content_1');
 
     if(this.size==1){
     
+    //-------------------------------------//
     popButton.disabled = true;
+    dequeueButton.disabled = true;
+    bottomButton.disabled = true;
+    topButton.disabled = true;
+    //-------------------------------------//
     artiste.innerHTML = "Vide";
     album.innerHTML = "Vide";
     genremsc.innerHTML = "Vide";
@@ -256,78 +269,76 @@ class Stack {
     section_1_content_1.innerHTML = `<img src="null.jpg" />`;
     teble_playlist.innerHTML =
         "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>Vide</td><td>Vide</td><td>Vide</td></tr>";
+    //-------------------------------------//
+    this.artiste.shift();
+    this.album.shift();
+    this.genremsc.shift();
+    this.lienmsc.shift();
+
+    this.top--;
+    this.size--;
+    //-------------------------------------//
+    console.log('---------------');
+    console.log('top:'+this.top);
+    console.log('size:'+this.size);
     }else{
       this.artiste.shift();
       this.album.shift();
       this.genremsc.shift();
       this.lienmsc.shift();
 
-      this.top--;
+      this.top = 1;
       this.size--;
 
-      artiste.innerHTML = this.artiste[0];
-      album.innerHTML = this.album[0];
-      genremsc.innerHTML = this.genremsc[0];
+      artiste.innerHTML = this.artiste[this.top];
+      album.innerHTML = this.album[this.top];
+      genremsc.innerHTML = this.genremsc[this.top];
 
-  
-      
       result.innerHTML =
         '<audio controls><source src="' +
-        this.lienmsc[0]+
+        this.lienmsc[this.top]+
         '" type="audio/mpeg"></audio>';
       teble_playlist.innerHTML =
         "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
-        this.artiste[0] +
+        this.artiste[this.top] +
         "</td><td>" +
-        this.album[0] +
+        this.album[this.top] +
         "</td><td>" +
-        this.genremsc[0] +
+        this.genremsc[this.top] +
         "</td></tr>";
         
-
-
-
         var im;
-        if (this.genremsc[0] == "Rap") {
+        if (this.genremsc[this.top] == "Rap") {
           // genre = "Rap";
           im = "rap.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
 
-          // alert(genre);
-        } else if (this.genremsc[0] == "Pop") {
+        } else if (this.genremsc[this.top] == "Pop") {
           // genre = "Pop";
           im = "pop.png";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[0] == "Classique") {
+        } else if (this.genremsc[this.top] == "Classique") {
           // genre = "Classique";
           im = "classique.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[0] == "Chaabi") {
+        } else if (this.genremsc[this.top] == "Chaabi") {
           // genre = "Chaabi";
           im = "b.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else {
           // genre = "null";
           im = "null.jpg";
-          // alert(genre);
         }
 
-
-
-
         section_1_content_1.innerHTML = `<img src=${im} />`;
-        
-        
-      
 
-
-
+        //-------------------------------------//
+        topButton.disabled = false;
+        bottomButton.disabled = true;
+        console.log('---------------');
+        console.log('top:'+this.top);
+        console.log('size:'+this.size);
     }
-    
-
   }
   // Top Method
   getPeak() {
@@ -345,24 +356,15 @@ class Stack {
 
     var section_1_content_1 = document.getElementById('section_1_content_1');
 
-   
     //-----------------------------//
 
     // pop button
     var topButton = document.getElementById("top-button");
 
-    console.log("Top (getPeak) : " + this.top);
-    console.log("Size (getPeak) : " + this.size);
-    console.log("Length (getPeak) : " + Number(this.lienmsc.length - 1));
-
     // check if we are not arrive to top one
-    if (this.size == Number(this.lienmsc.length - 1)) {
+    if (this.top == Number(this.lienmsc.length - 1)) {
       topButton.disabled = true;
-      // this.top++;
-      // this.size++;
-      // result.innerHTML = this.stack[this.size];
-      // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-
+      //-----------------------------//
       artiste.innerHTML = this.artiste[this.size];
       album.innerHTML = this.album[this.size];
       genremsc.innerHTML = this.genremsc[this.size];
@@ -379,8 +381,6 @@ class Stack {
         this.genremsc[this.size] +
         "</td></tr>";
 
-
-
         // *********************************************
 
         var im;
@@ -389,103 +389,88 @@ class Stack {
           im = "rap.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
 
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Pop") {
           // genre = "Pop";
           im = "pop.png";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Classique") {
           // genre = "Classique";
           im = "classique.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Chaabi") {
           // genre = "Chaabi";
           im = "b.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else {
           // genre = "null";
           im = "null.jpg";
-          // alert(genre);
         }
 
 
         section_1_content_1.innerHTML = `<img src=${im} />`;
-
-      // result.innerHTML = '<audio controls><source src="'+this.stack[this.size]+'" type="audio/mpeg"></audio>';
-
-      // //----------------------//
-
-      // singer.innerHTML = this.singer[this.size];
-
-      // title.innerHTML = this.title[this.size];
 
       //-------------------------//
 
       bottomButton.disabled = false;
+      //-------------------------------------//
+      console.log('---------------');
+      console.log('top:'+this.top);
+      console.log('size:'+this.size);
     } else {
-      this.size++;
-      // result.innerHTML = this.stack[this.size];
-      // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
+      this.top++;
 
-      artiste.innerHTML = this.artiste[this.size];
-      album.innerHTML = this.album[this.size];
-      genremsc.innerHTML = this.genremsc[this.size];
+      artiste.innerHTML = this.artiste[this.top];
+      album.innerHTML = this.album[this.top];
+      genremsc.innerHTML = this.genremsc[this.top];
       result.innerHTML =
         '<audio controls><source src="' +
-        this.lienmsc[this.size] +
+        this.lienmsc[this.top] +
         '" type="audio/mpeg"></audio>';
       teble_playlist.innerHTML =
         "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
-        this.artiste[this.size] +
+        this.artiste[this.top] +
         "</td><td>" +
-        this.album[this.size] +
+        this.album[this.top] +
         "</td><td>" +
-        this.genremsc[this.size] +
+        this.genremsc[this.top] +
         "</td></tr>";
-
 
         // *********************************************
 
-
         var im;
-        if (this.genremsc[this.size] == "Rap") {
+        if (this.genremsc[this.top] == "Rap") {
           // genre = "Rap";
           im = "rap.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
 
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Pop") {
+        } else if (this.genremsc[this.top] == "Pop") {
           // genre = "Pop";
           im = "pop.png";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Classique") {
+        } else if (this.genremsc[this.top] == "Classique") {
           // genre = "Classique";
           im = "classique.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Chaabi") {
+        } else if (this.genremsc[this.top] == "Chaabi") {
           // genre = "Chaabi";
           im = "b.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else {
           // genre = "null";
           im = "null.jpg";
-          // alert(genre);
         }
 
         section_1_content_1.innerHTML = `<img src=${im} />`;
       
-
-      //---------------------------------//
-      bottomButton.disabled = false;
+      //-------------------------------------//
+      bottomButton.disabled = false;     
+      //-------------------------------------//
+      console.log('---------------');
+      console.log('top:'+this.top);
+      console.log('size:'+this.size);
     }
 
-    if (this.size == Number(this.lienmsc.length - 1)) {
+    if (this.top == Number(this.lienmsc.length - 1)) {
       topButton.disabled = true;
     }
   }
@@ -508,8 +493,6 @@ class Stack {
 
 
     var section_1_content_1 = document.getElementById('section_1_content_1');
-
-
   
     //-----------------------------//
 
@@ -522,7 +505,6 @@ class Stack {
     // check if we are in firt value at bottom
     if (this.size == 0) {
       
-
       artiste.innerHTML = this.artiste[this.size];
       album.innerHTML = this.album[this.size];
       genremsc.innerHTML = this.genremsc[this.size];
@@ -538,7 +520,6 @@ class Stack {
         "</td><td>" +
         this.genremsc[this.size] +
         "</td></tr>";
-
 
         // ***************************************
 
@@ -547,8 +528,6 @@ class Stack {
           // genre = "Rap";
           im = "rap.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Pop") {
           // genre = "Pop";
           im = "pop.png";
@@ -558,92 +537,82 @@ class Stack {
           // genre = "Classique";
           im = "classique.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else if (this.genremsc[this.size] == "Chaabi") {
           // genre = "Chaabi";
           im = "b.jpg";
           section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
         } else {
           // genre = "null";
           im = "null.jpg";
-          // alert(genre);
         }
 
         section_1_content_1.innerHTML = `<img src=${im} />`;
 
-      
+        bottomButton.disabled = true;
+        topButton.disabled = true;
 
-      //--------------------------------------//
+      //-------------------------------------//
+      console.log('---------------');
+      console.log('top:'+this.top);
+      console.log('size:'+this.size);
     } else {
-      this.size--;
-      // result.innerHTML = this.stack[this.size];
-      // result.innerHTML = '<img src="'+this.stack[this.size]+'" >';
-
-      artiste.innerHTML = this.artiste[this.size];
-      album.innerHTML = this.album[this.size];
-      genremsc.innerHTML = this.genremsc[this.size];
-      result.innerHTML =
-        '<audio controls><source src="' +
-        this.lienmsc[this.size] +
-        '" type="audio/mpeg"></audio>';
-      teble_playlist.innerHTML =
-        "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
-        this.artiste[this.size] +
-        "</td><td>" +
-        this.album[this.size] +
-        "</td><td>" +
-        this.genremsc[this.size] +
-        "</td></tr>";
-
-
-
-        // *****************************************
-
-        var im;
-        if (this.genremsc[this.size] == "Rap") {
-          // genre = "Rap";
-          im = "rap.jpg";
-          section_1_content_1.innerHTML = `<img src=${im} />`;
-
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Pop") {
-          // genre = "Pop";
-          im = "pop.png";
-          section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Classique") {
-          // genre = "Classique";
-          im = "classique.jpg";
-          section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else if (this.genremsc[this.size] == "Chaabi") {
-          // genre = "Chaabi";
-          im = "b.jpg";
-          section_1_content_1.innerHTML = `<img src=${im} />`;
-          // alert(genre);
-        } else {
-          // genre = "null";
-          im = "null.jpg";
-          // alert(genre);
+        if (this.top == 1) {
+          bottomButton.disabled = true;
         }
+        else if (this.top > 1) {
+          this.top--;
+
+          artiste.innerHTML = this.artiste[this.top];
+          album.innerHTML = this.album[this.top];
+          genremsc.innerHTML = this.genremsc[this.top];
+          result.innerHTML =
+            '<audio controls><source src="' +
+            this.lienmsc[this.top] +
+            '" type="audio/mpeg"></audio>';
+          teble_playlist.innerHTML =
+            "<tr><th>Artiste</th><th>Abum</th><th>Genre</th></tr><tr><td>" +
+            this.artiste[this.top] +
+            "</td><td>" +
+            this.album[this.top] +
+            "</td><td>" +
+            this.genremsc[this.top] +
+            "</td></tr>";
+
+            // *****************************************
+
+            var im;
+            if (this.genremsc[this.top] == "Rap") {
+              // genre = "Rap";
+              im = "rap.jpg";
+              section_1_content_1.innerHTML = `<img src=${im} />`;
+
+            } else if (this.genremsc[this.top] == "Pop") {
+              // genre = "Pop";
+              im = "pop.png";
+              section_1_content_1.innerHTML = `<img src=${im} />`;
+            } else if (this.genremsc[this.top] == "Classique") {
+              // genre = "Classique";
+              im = "classique.jpg";
+              section_1_content_1.innerHTML = `<img src=${im} />`;
+            } else if (this.genremsc[this.top] == "Chaabi") {
+              // genre = "Chaabi";
+              im = "b.jpg";
+              section_1_content_1.innerHTML = `<img src=${im} />`;
+            } else {
+              // genre = "null";
+              im = "null.jpg";
+            }
 
 
-        section_1_content_1.innerHTML = `<img src=${im} />`;
+            section_1_content_1.innerHTML = `<img src=${im} />`;
+            //-------------------------------------//
+            console.log('---------------');
+            console.log('top:'+this.top);
+            console.log('size:'+this.size);
+        }
+      
     }
-
-    
-
-    if (this.size == 1) {
-      bottomButton.disabled = true;
-    }
-
-    console.log("Size (getLow) : " + this.size);
-    console.log("Top (getLow) : " + this.top);
-
-    // Enable top button when clicks on bottom button
     topButton.disabled = false;
-    // bottomButton.disabled = false;
   }
 }
 
@@ -676,10 +645,6 @@ function Peak() {
 // Low Function
 function Low() {
   st.getLow();
-}
-
-function test() {
-  alert("ok");
 }
 
 function deQueue() {
