@@ -603,7 +603,6 @@ class Stack {
               im = "null.jpg";
             }
 
-
             section_1_content_1.innerHTML = `<img src=${im} />`;
             //-------------------------------------//
             console.log('---------------');
